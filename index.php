@@ -21,3 +21,21 @@
     </button>
 </body>
 </html>
+
+<?php
+//Variaveis
+    $name =" Francisco Costa";
+    $email = "francisco100eg@gmail.com";
+    $age = 30;
+    $height = 1.75;
+    $total = $age * $height;
+
+    echo  "$total";
+    //string literal
+    echo "<br> Olá eu sou {$name}.";
+    echo "<br> O meu email é {$email}";
+    echo "<br> Eu tenho {$age} anos.";
+    echo "<br> Tenho {$height} de altura.";
+
+
+?> 
