@@ -172,7 +172,14 @@ switch ($grade) {
         break;
 }
 
-for($i = 0;$i <= 5; $i+= 1){
-    echo $i;
-}
+// for($i = 0;$i <= 5; $i+= 1){
+//     echo $i;
+// }
+// $counterWhile = 0;
+
+// while($counterWhile < 100){
+//     sleep(1);
+//     echo "{$counterWhile}segundo.";
+//     $counterWhile += 5;
+// }
 ?>
