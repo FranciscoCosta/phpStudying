@@ -254,3 +254,57 @@ if (empty($nome)) {
     echo "A variavel não está vazia <br>";
 }
 ?>
+
+<?php
+// Funções
+function sayHello($name){
+    echo "Hello {$name} <br>";
+}
+
+sayHello("Xico");
+
+
+function sum($x,$y){
+    return $x + $y;
+}
+
+echo sum(5,5);
+
+function stringLower($string){
+    return strtolower($string);
+}
+
+echo stringLower("Xico");
+
+function stringUpper($string){
+    return strtoupper($string);
+}
+
+echo stringUpper("Xico");
+
+function stringLength($string){
+    return strlen($string);
+}
+
+echo stringLength("Xico");
+
+function stringReplace($string,$old,$new){
+    return str_replace($old,$new,$string);
+}
+
+echo stringReplace("Xico","X","Z");
+
+function stringSubstr($string,$start,$end){
+    return substr($string,$start,$end);
+}
+
+echo stringSubstr("Xico",0,2);
+
+function stringExplode($string,$delimiter){
+    return explode($delimiter,$string);
+}
+
+
+echo stringExplode("Xico,João,Manuel",",");
+
+?>
