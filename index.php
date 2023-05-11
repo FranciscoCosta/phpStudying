@@ -116,6 +116,18 @@ echo "<br> Tenho {$height} de altura.";
     echo "Valor da raiz quadrada de x {$xsqrt} <br>";
     echo "Valor máximo de x,y,z é : {$maxValue} <br>";
     echo "Valor minimo de x,y,z é : {$minValue} <br>";
-    echo "Valor randomico entre x e y : {$randXY}";
+    echo "Valor randomico entre x e y : {$randXY} <br>";
+
+    //Condicionais if
+
+    if($x > $y){
+        echo "x é maior que y";
+    }
+    elseif($x == $y){
+        echo "x é igual a y";
+    }
+    else{
+        echo "x é menor que y";
+    }
 
 ?>
