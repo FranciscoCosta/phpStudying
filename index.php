@@ -129,5 +129,19 @@ echo "<br> Tenho {$height} de altura.";
     else{
         echo "x é menor que y";
     }
+    //condicionals
+    if($x >= 0 && $x <= 10){
+        echo "x é maior que 0 e menor que 10";
+    }
+    else{
+        echo "x é menor que 0 ou maior que 10";
+    }
+    if($x < 0 || $x > 10){
+        echo "x é menor que 0 ou maior que 10";
+    }
+    else{
+        echo "x é maior que 0 e menor que 10";
+    }
 
+    //!  -> not
 ?>
