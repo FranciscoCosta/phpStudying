@@ -182,4 +182,20 @@ switch ($grade) {
 //     echo "{$counterWhile}segundo.";
 //     $counterWhile += 5;
 // }
+
+$comida = array("Pizza", "Hamburger", "Pasta");
+
+$comida[0] = "sushi";
+
+array_push($comida,"Picanha","alcatra");
+array_pop($comida);
+array_shift($comida);
+$reverseComida = array_reverse($comida);
+
+count($comida);
+
+foreach($comida as $food ){
+    echo $food . "<br>";
+}
+
 ?>
