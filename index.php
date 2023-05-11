@@ -171,4 +171,8 @@ switch ($grade) {
         echo "Nota inválida <br>";
         break;
 }
+
+for($i = 0;$i <= 5; $i+= 1){
+    echo $i;
+}
 ?>
