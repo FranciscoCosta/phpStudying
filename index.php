@@ -1,4 +1,8 @@
 <?php
+include 'header.html';
+?>
+
+<?php
 echo "Olá eu sou , <br>";
 echo "Francisco Costa <br>";
 //Comentário de uma linha
@@ -88,6 +92,19 @@ echo "<br> Tenho {$height} de altura.";
             Enviar
         </button>
     </form>
+<!-- 
+Validacao e limpeza de dados -->
+<form action="index.php" method="post">
+    <label for="username2">Novo Usuário</label>
+    <br>
+    <input type="text" name="username2">
+    <br>
+    <label for="password2">Nova Password</label>
+    <input type="password" name="password2"/> 
+    <br>
+    <button type="submit" value="Enviar2" name="Enviar2">Enviar</button>
+
+</form>
 
 </body>
 
@@ -306,5 +323,18 @@ function stringExplode($string,$delimiter){
 
 
 echo stringExplode("Xico,João,Manuel",",");
+
+?>
+
+<?php
+if(isset($_POST["Enviar2"])){
+    $usuario = $_POST["username2"];
+    $senha = $_POST["password2"];
+
+    echo "O nome de usuario é {$usuario} e a senha é {$senha}";
+}
+ ?>
+<?php
+include 'footer.html';
 
 ?>
