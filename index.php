@@ -197,5 +197,43 @@ count($comida);
 foreach($comida as $food ){
     echo $food . "<br>";
 }
+// Associative arrays
+
+$capitais = array("Portugal" => "Porto", "Brasil" => "Brasilia", "Espanha" => "Madrid");
+
+//  altera valor da chave
+$capitais["Portugal"] = "Lisboa";
+
+//adiciona nova chave valor
+$capitais["Suiça"] = "Berna";
+
+//remove ultimo elemento
+array_pop($capitais);
+
+//remove primeiro elemnto
+array_shift($capitais);
+//listas as chaves
+$chaves = array_keys($capitais);
+
+$fliped = array_flip($capitais);
+
+//listas os valors
+
+$valores = array_values($capitais);
+
+foreach($capitais as $key => $value){
+    echo "A capital de {$key} é {$value} <br>";
+} 
+
+foreach($chaves as $chave){
+    echo "{$chave} <br>";
+} 
+foreach($valores as $valor){
+    echo "{$valor} <br>";
+}
+
+foreach($fliped as $valor => $key){
+    echo "A capital de {$key} é {$value} <br>";
+} 
 
 ?>
