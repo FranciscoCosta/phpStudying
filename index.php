@@ -20,7 +20,7 @@ echo "<br> O meu email é {$email}";
 echo "<br> Eu tenho {$age} anos.";
 echo "<br> Tenho {$height} de altura.";
 
-    /*
+/*
     Matematica simples
 
     $total = 1 + 1
@@ -31,7 +31,7 @@ echo "<br> Tenho {$height} de altura.";
     $total = 1 % 2
     */
 
-    /*
+/*
     Incremento e Decremento
     
     $counter = 10;
@@ -62,8 +62,8 @@ echo "<br> Tenho {$height} de altura.";
         <label for="password">Password</label>
         <input type="password" name="password">
         <button type="submit">
-        LogIn
-    </button>
+            LogIn
+        </button>
     </form>
 
     <h1>Math fuction</h1>
@@ -75,73 +75,100 @@ echo "<br> Tenho {$height} de altura.";
         <input type="text" name="y">
         <label for="z">z:</label>
         <input type="text" name="z">
+
+        <select name="grade">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option vClue="D">D</option>
+            <option vDlue="E">E</option>
+            <option vElue="F">F</option>
+        </select>
         <button type="submit">
-        Enviar
-    </button>
+            Enviar
+        </button>
     </form>
+
 </body>
+
 </html>
 
 <?php
-    echo "{$_GET["username"]} <br>";
-    echo "{$_GET["password"]} <br>";
-    echo "{$_POST["username"]} <br>";
-    echo "{$_POST["password"]} <br>";
-    // GET envia a informação via Url
-    // Post através de Body do Request Http
+echo "{$_GET["username"]} <br>";
+echo "{$_GET["password"]} <br>";
+echo "{$_POST["username"]} <br>";
+echo "{$_POST["password"]} <br>";
+// GET envia a informação via Url
+// Post através de Body do Request Http
 
-    $x = $_POST["x"];
-    $y = $_POST["y"];
-    $z = $_POST["z"];
-    echo "O valor de x é :{$x} <br>";
-    echo "O valor de y é :{$y} <br>";
-    echo "O valor de z é :{$z} <br>";
+$x = $_POST["x"];
+$y = $_POST["y"];
+$z = $_POST["z"];
+$grade = $_POST["grade"];
+echo "O valor de x é :{$x} <br>";
+echo "O valor de y é :{$y} <br>";
+echo "O valor de z é :{$z} <br>";
 
-    $xabs = abs($x);
-    $yround = round($y);
-    $yfloor = floor($y);
-    $yceil = ceil($y);
-    $xpower = pow( $x, $y);
-    $xsqrt = sqrt($x);
-    $maxValue = max($x,$y,$z);
-    $minValue = min($x,$y,$z);
-    $randXY = rand($x,$y);
+$xabs = abs($x);
+$yround = round($y);
+$yfloor = floor($y);
+$yceil = ceil($y);
+$xpower = pow($x, $y);
+$xsqrt = sqrt($x);
+$maxValue = max($x, $y, $z);
+$minValue = min($x, $y, $z);
+$randXY = rand($x, $y);
 
-    
-    echo "Valor absoluto de x {$xabs} <br>";
-    echo "Valor arredondado de y {$yround} <br>";
-    echo "Valor arredondado para baixo de y {$yround} <br>";
-    echo "Valor arredondado para cima de y {$yceil} <br>";
-    echo "Valor de x levantado a y {$xpower} <br>";
-    echo "Valor da raiz quadrada de x {$xsqrt} <br>";
-    echo "Valor máximo de x,y,z é : {$maxValue} <br>";
-    echo "Valor minimo de x,y,z é : {$minValue} <br>";
-    echo "Valor randomico entre x e y : {$randXY} <br>";
 
-    //Condicionais if
+echo "Valor absoluto de x {$xabs} <br>";
+echo "Valor arredondado de y {$yround} <br>";
+echo "Valor arredondado para baixo de y {$yround} <br>";
+echo "Valor arredondado para cima de y {$yceil} <br>";
+echo "Valor de x levantado a y {$xpower} <br>";
+echo "Valor da raiz quadrada de x {$xsqrt} <br>";
+echo "Valor máximo de x,y,z é : {$maxValue} <br>";
+echo "Valor minimo de x,y,z é : {$minValue} <br>";
+echo "Valor randomico entre x e y : {$randXY} <br>";
 
-    if($x > $y){
-        echo "x é maior que y";
-    }
-    elseif($x == $y){
-        echo "x é igual a y";
-    }
-    else{
-        echo "x é menor que y";
-    }
-    //condicionals
-    if($x >= 0 && $x <= 10){
-        echo "x é maior que 0 e menor que 10";
-    }
-    else{
-        echo "x é menor que 0 ou maior que 10";
-    }
-    if($x < 0 || $x > 10){
-        echo "x é menor que 0 ou maior que 10";
-    }
-    else{
-        echo "x é maior que 0 e menor que 10";
-    }
+//Condicionais if
 
-    //!  -> not
+if ($x > $y) {
+    echo "x é maior que y <br>";
+} elseif ($x == $y) {
+    echo "x é igual a y <br>";
+} else {
+    echo "x é menor que y <br>";
+}
+//condicionals
+if ($x >= 0 && $x <= 10) {
+    echo "x é maior que 0 e menor que 10 <br>";
+} else {
+    echo "x é menor que 0 ou maior que 10 <br>";
+}
+if ($x < 0 || $x > 10) {
+    echo "x é menor que 0 ou maior que 10 <br>";
+} else {
+    echo "x é maior que 0 e menor que 10 <br>";
+}
+
+//!  -> not
+
+
+switch ($grade) {
+    case "A":
+        echo "Excelente <br>";
+        break;
+    case "B":
+        echo "Bom <br>";
+        break;
+    case "C":
+        echo "Satisfatório <br>";
+        break;
+    case "D":
+        echo "Insatisfatório <br>";
+        break;
+    default:
+        echo "Nota inválida <br>";
+        break;
+}
 ?>
