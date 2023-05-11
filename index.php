@@ -187,14 +187,14 @@ $comida = array("Pizza", "Hamburger", "Pasta");
 
 $comida[0] = "sushi";
 
-array_push($comida,"Picanha","alcatra");
+array_push($comida, "Picanha", "alcatra");
 array_pop($comida);
 array_shift($comida);
 $reverseComida = array_reverse($comida);
 
 count($comida);
 
-foreach($comida as $food ){
+foreach ($comida as $food) {
     echo $food . "<br>";
 }
 // Associative arrays
@@ -221,19 +221,36 @@ $fliped = array_flip($capitais);
 
 $valores = array_values($capitais);
 
-foreach($capitais as $key => $value){
+foreach ($capitais as $key => $value) {
     echo "A capital de {$key} é {$value} <br>";
-} 
+}
 
-foreach($chaves as $chave){
+foreach ($chaves as $chave) {
     echo "{$chave} <br>";
-} 
-foreach($valores as $valor){
+}
+foreach ($valores as $valor) {
     echo "{$valor} <br>";
 }
 
-foreach($fliped as $valor => $key){
+foreach ($fliped as $valor => $key) {
     echo "A capital de {$key} é {$value} <br>";
-} 
+}
 
+
+//isset() => verifica se a variavel existe
+//empty() => verifica se a variavel está vazia
+
+$nome = "Xico";
+
+if (isset($nome)) {
+    echo "A variavel existe <br>";
+} else {
+    echo "A variavel não existe <br>";
+}
+
+if (empty($nome)) {
+    echo "A variavel está vazia <br>";
+} else {
+    echo "A variavel não está vazia <br>";
+}
 ?>
