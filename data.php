@@ -5,8 +5,16 @@ include("database.php");
 $username = "Edu";
 $password = "edu1234";
 
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+// $sqlname = "SELECT * FROM users WHERE user = '$username'";
 
+// $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+try{
+    $result = mysqli_query($db_conn, $sqlname);
+    echo $result;
+}catch(mysqli_sql_exception $e){
+    echo "Erro ao verificar usuário <br>";
+}
 
 $sql = "INSERT INTO users (users, passwords) VALUES ('$username', '$hashed_password')";
 try {
