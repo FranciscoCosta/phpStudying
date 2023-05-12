@@ -1,4 +1,8 @@
 <?php
+session_start();
+?>
+
+<?php
 include 'header.html';
 ?>
 
@@ -58,7 +62,9 @@ echo "<br> Tenho {$height} de altura.";
 </head>
 
 <body>
-
+    <form action="index.php" method="post">
+        <input type="submit" name="logout" value="logout">
+    </form>
 
     <form action="index.php" method="post">
         <label for="username">Usuário</label>
@@ -92,19 +98,19 @@ echo "<br> Tenho {$height} de altura.";
             Enviar
         </button>
     </form>
-<!-- 
+    <!-- 
 Validacao e limpeza de dados -->
-<form action="index.php" method="post">
-    <label for="username2">Novo Usuário</label>
-    <br>
-    <input type="text" name="username2">
-    <br>
-    <label for="password2">Nova Password</label>
-    <input type="password" name="password2"/> 
-    <br>
-    <button type="submit" value="Enviar2" name="Enviar2">Enviar</button>
+    <form action="index.php" method="post">
+        <label for="username2">Novo Usuário</label>
+        <br>
+        <input type="text" name="username2">
+        <br>
+        <label for="password2">Nova Password</label>
+        <input type="password" name="password2" />
+        <br>
+        <button type="submit" value="Enviar2" name="Enviar2">Enviar</button>
 
-</form>
+    </form>
 
 </body>
 
@@ -274,67 +280,89 @@ if (empty($nome)) {
 
 <?php
 // Funções
-function sayHello($name){
+function sayHello($name)
+{
     echo "Hello {$name} <br>";
 }
 
 sayHello("Xico");
 
 
-function sum($x,$y){
+function sum($x, $y)
+{
     return $x + $y;
 }
 
-echo sum(5,5);
+echo sum(5, 5);
 
-function stringLower($string){
+function stringLower($string)
+{
     return strtolower($string);
 }
 
 echo stringLower("Xico");
 
-function stringUpper($string){
+function stringUpper($string)
+{
     return strtoupper($string);
 }
 
 echo stringUpper("Xico");
 
-function stringLength($string){
+function stringLength($string)
+{
     return strlen($string);
 }
 
 echo stringLength("Xico");
 
-function stringReplace($string,$old,$new){
-    return str_replace($old,$new,$string);
+function stringReplace($string, $old, $new)
+{
+    return str_replace($old, $new, $string);
 }
 
-echo stringReplace("Xico","X","Z");
+echo stringReplace("Xico", "X", "Z");
 
-function stringSubstr($string,$start,$end){
-    return substr($string,$start,$end);
+function stringSubstr($string, $start, $end)
+{
+    return substr($string, $start, $end);
 }
 
-echo stringSubstr("Xico",0,2);
+echo stringSubstr("Xico", 0, 2);
 
-function stringExplode($string,$delimiter){
-    return explode($delimiter,$string);
+function stringExplode($string, $delimiter)
+{
+    return explode($delimiter, $string);
 }
 
 
-echo stringExplode("Xico,João,Manuel",",");
+echo stringExplode("Xico,João,Manuel", ",");
 
 ?>
 
 <?php
-if(isset($_POST["Enviar2"])){
+if (isset($_POST["Enviar2"])) {
     $usuario = $_POST["username2"];
     $senha = $_POST["password2"];
 
     echo "O nome de usuario é {$usuario} e a senha é {$senha}";
 }
- ?>
+?>
 <?php
 include 'footer.html';
+
+?>
+
+<?php
+
+echo  "{$_SESSION["username"]} Sessão<br>";
+
+?>
+
+<?php
+    if(isset($_POST["logout"])){
+        session_destroy();
+        header("Location: login.php");
+    }
 
 ?>
